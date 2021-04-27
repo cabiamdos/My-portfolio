@@ -34,46 +34,86 @@
   </div>
   <div class="hero">
     <div class="content">
-      <h1>Beautifully Crafted Web Experiences</h1>
-      <div class="meet">
+      <h1 class="stagger1">Beautifully Crafted Web Experiences</h1>
+      <div class="meet stagger1">
         <span>👇</span>
         <p>Meet Gary Simons</p>
       </div>
-      <svg xmlns="http://www.w3.org/2000/svg" class="scroll" viewBox="2158 1101 44 86">
+      <svg xmlns="http://www.w3.org/2000/svg" class="scroll stagger1" viewBox="2158 1101 44 86">
         <defs>
           <style>
-            .cls-1,
-            .cls-4 {
+            .clss-1,
+            .clss-4 {
               fill: none;
             }
 
-            .cls-1 {
+            .clss-1 {
               stroke: #fff;
               stroke-width: 6px;
             }
 
-            .cls-2 {
+            .clss-2 {
               fill: #fff;
             }
 
-            .cls-3 {
+            .clss-3 {
               stroke: none;
             }
           </style>
         </defs>
         <g id="Group_2" data-name="Group 2" transform="translate(1929 403)">
-          <g id="Rectangle_3" data-name="Rectangle 3" class="cls-1" transform="translate(229 698)">
-            <rect class="cls-3" width="44" height="86" rx="22" />
-            <rect class="cls-4" x="3" y="3" width="38" height="80" rx="19" />
+          <g id="Rectangle_3" data-name="Rectangle 3" class="clss-1" transform="translate(229 698)">
+            <rect class="clss-3" width="44" height="86" rx="22" />
+            <rect class="clss-4" x="3" y="3" width="38" height="80" rx="19" />
           </g>
-          <circle id="Ellipse_1" data-name="Ellipse 1" class="cls-2" cx="12.5" cy="12.5" r="12.5" transform="translate(239 708)" />
+          <circle id="Ellipse_1" data-name="Ellipse 1" class="clss-2 circle_scroll" cx="12.5" cy="12.5" r="12.5" transform="translate(239 708)" />
         </g>
       </svg>
 
 
     </div>
-    <img src="images/hero-group.svg" class="hero-design" alt="hero-group">
+    <svg class="hero-design" viewBox="2883.3 620 646.7 646.7">
+      <defs>
+        <style>
+          .cls-1, .cls-3 {
+            fill: #6e00ff;
+          }
+
+          .cls-2, .cls-4 {
+            fill: #fff;
+          }
+
+          .cls-3 {
+            opacity: 0.29;
+          }
+
+          .cls-4 {
+            opacity: 0.24;
+          }
+
+          .cls-5 {
+            fill: #ff64cb;
+          }
+
+          .cls-6 {
+            fill: #00ebff;
+          }
+        </style>
+      </defs>
+      <g id="Group_3" data-name="Group 3" transform="translate(1885.3 357)">
+        <rect id="Rectangle_4" data-name="Rectangle 4" class="anim-square cls-1" width="161.675" height="161.675" rx="18" transform="translate(1321.35 263)"/>
+        <rect id="Rectangle_5" data-name="Rectangle 5" class="anim-square cls-2" width="161.675" height="161.675" rx="18" transform="translate(1159.675 424.675)"/>
+        <rect id="Rectangle_6" data-name="Rectangle 6" class="anim-square cls-3" width="161.675" height="161.675" rx="18" transform="translate(1483.025 424.675)"/>
+        <rect id="Rectangle_7" data-name="Rectangle 7" class="anim-square cls-4" width="161.675" height="161.675" rx="18" transform="translate(998 586.35)"/>
+        <rect id="Rectangle_8" data-name="Rectangle 8" class="anim-square cls-1" width="161.675" height="161.675" rx="18" transform="translate(1321.35 586.35)"/>
+        <rect id="Rectangle_9" data-name="Rectangle 9" class="anim-square cls-2" width="161.675" height="161.675" rx="18" transform="translate(1159.675 748.025)"/>
+        <circle id="Ellipse_2" data-name="Ellipse 2" class="anim-square cls-5" cx="80.837" cy="80.837" r="80.837" transform="translate(1321.35 424.675)"/>
+        <circle id="Ellipse_3" data-name="Ellipse 3" class="anim-square cls-6" cx="80.837" cy="80.837" r="80.837" transform="translate(1159.675 586.35)"/>
+      </g>
+    </svg>
+    <!--<img src="images/hero-group.svg" class="hero-design" alt="hero-group">-->
     <!--<img src="images/scroll-letsee.svg" alt="scroll">-->
+
   </div>
 
   <section class="featured">
@@ -157,6 +197,59 @@
       </div>
     </div>
   </section>
-</body>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.1/gsap.min.js" integrity="sha512-cdV6j5t5o24hkSciVrb8Ki6FveC2SgwGfLE31+ZQRHAeSRxYhAQskLkq3dLm8ZcWe1N3vBOEYmmbhzf7NTtFFQ==" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.1/ScrollTrigger.min.js" integrity="sha512-Q+G390ZU2qKo+e4q+kVcJknwfGjKJOdyu5mVMcR95NqL6XaF4lY4nsSvIVB3NDP54ACsS9rqhE1DVqgpApl//Q==" crossorigin="anonymous"></script>
+  <script type="text/javascript">
 
+    gsap.registerPlugin(ScrollTrigger);
+    var tl = gsap.timeline();
+
+    tl.from('.content', {
+      y: '-30%',
+      opacity: 0,
+      duration: 2,
+      ease: Power4.easeOut,
+    });
+
+    tl.from('.stagger1', {
+      opacity: 0,
+      y: -50,
+      stagger: .3, //they will come sequencially
+      ease: Power4.easeOut,
+      duration: 2
+    }, "-=1.5"); // this will ensure it load more closely from the other animation
+    tl.from('.hero-design', {
+      opacity: 0, y: 50, ease: Power4.easeOut, duration:1
+    }, "-=2");
+
+    gsap.from(".anim-square", {
+      stagger: .2,
+      scale: 0.1,
+      duration: 1,
+      ease: Back.easeOut.config(1.7)
+    });
+
+    gsap.from(".transition2", {
+            scrollTrigger: {
+                trigger: '.transition2',
+                start: "top bottom"
+            },
+            y: 50,
+            opacity: 0,
+            duration: 1.2,
+            stagger: .3
+        })
+
+        gsap.from(".transition3", {
+            scrollTrigger: {
+                trigger: ".transition3",
+                start: "top center"
+            },
+            y: 50,
+            opacity: 0,
+            duration: 1.2,
+            stagger: .6
+        });
+  </script>
 </html>
+
