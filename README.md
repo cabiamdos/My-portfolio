@@ -1,5 +1,5 @@
 ﻿# My-portfolio
 Hello,
 
-This is a  worthless shit I have upload to test github on a brand new account. Feel free to comment bellow ::happy
+This is a  w̶o̶r̶t̶h̶l̶e̶s̶s̶ simple portfolio. Feel free to comment bellow ::happy
 
